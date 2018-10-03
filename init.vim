@@ -8,10 +8,10 @@ call plug#end()
 " https://stackoverflow.com/questions/10389205/show-current-leader-key-setting
 let mapleader = ','
 
-" global clipboard just works without below or similar:
+" global clipboard
 " https://www.reddit.com/r/neovim/comments/3fricd/easiest_way_to_copy_from_neovim_to_system/
 " https://github.com/neovim/neovim/issues/4706#issuecomment-325284385
-"set clipboard+=unnamedplus
+set clipboard+=unnamedplus
 
 
 " Paste with middle mouse click
