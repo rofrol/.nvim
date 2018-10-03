@@ -54,3 +54,7 @@ set nu
 
 " https://www.reddit.com/r/vim/comments/5c9dxg/using_jk_as_escaping_to_normal_mode/
 imap jk <Esc>
+
+" set Frame title
+" https://github.com/equalsraf/neovim-qt/issues/95#issuecomment-304661632
+set title
