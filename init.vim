@@ -1,5 +1,6 @@
 call plug#begin('~/AppData/Local/nvim/autoload')
 Plug 'elmcast/elm-vim'
+Plug 'airblade/vim-rooter'
 call plug#end()
 
 " https://github.com/kristijanhusak/neovim-config/blob/52e9e886dd256c5c267c70d2afa72796f3390a92/init.vim#L48 
