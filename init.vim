@@ -29,10 +29,6 @@ nnoremap gsv :so $MYVIMRC<CR>
 
 nmap <Leader>s :%s//g<Left><Left>
 
-"let g:elm_format_autosave = 1
-"let g:elm_format_fail_silently = 0
-let g:elm_setup_keybindings = 1
-
 " Somehow keybindings are not set, even with `let g:elm_setup_keybindings = 1`
 nmap <Leader>m :ElmMake<CR>
 nmap <Leader>b :ElmMakeMain<CR>
@@ -53,7 +49,7 @@ set noswapfile
 set nu
 
 " https://www.reddit.com/r/vim/comments/5c9dxg/using_jk_as_escaping_to_normal_mode/
-imap jk <Esc>
+inoremap jk <Esc>
 
 " set Frame title
 " https://github.com/equalsraf/neovim-qt/issues/95#issuecomment-304661632
