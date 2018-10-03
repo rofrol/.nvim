@@ -41,3 +41,16 @@ set splitbelow
 set splitright
 
 nmap <Backspace> :noh<CR>
+
+" https://stackoverflow.com/questions/9511253/how-to-effectively-use-vim-wildmenu#comment58670078_9528037
+" http://www.reddit.com/r/vim/comments/19izuz/whats_your_wildmode/
+set wildmenu
+"set wildmode=longest,list
+"set wildmode=longest:list,full
+set wildmode=longest:full,full
+
+set noswapfile
+set nu
+
+" https://www.reddit.com/r/vim/comments/5c9dxg/using_jk_as_escaping_to_normal_mode/
+imap jk <Esc>
