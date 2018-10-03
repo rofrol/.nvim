@@ -1,4 +1,5 @@
 call plug#begin('~/AppData/Local/nvim/autoload')
+" Plugins directory https://vimawesome.com
 Plug 'elmcast/elm-vim'
 Plug 'airblade/vim-rooter'
 call plug#end()
