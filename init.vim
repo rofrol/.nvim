@@ -58,3 +58,18 @@ imap jk <Esc>
 " set Frame title
 " https://github.com/equalsraf/neovim-qt/issues/95#issuecomment-304661632
 set title
+
+" select with mouse
+set mouse=a
+
+" http://vim.wikia.com/wiki/Alternative_tab_navigation
+nnoremap <C-1> 1gt
+nnoremap <C-2> 2gt
+nnoremap <C-3> 3gt
+nnoremap <C-4> 4gt
+nnoremap <C-5> 5gt
+nnoremap <C-6> 6gt
+nnoremap <C-7> 7gt
+nnoremap <C-8> 8gt
+nnoremap <C-9> 9gt
+nnoremap <C-0> 10gt
