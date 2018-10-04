@@ -1,3 +1,9 @@
+" https://github.com/thaerkh/vim-workspace
+if empty(glob('~/AppData/Local/nvim/autoload/plug.vim'))
+  silent execute "!curl -fLo ~/AppData/Local/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+  autocmd VimEnter * PlugInstall | source $MYVIMRC
+endif
+
 call plug#begin('~/AppData/Local/nvim/autoload')
 " Plugins directory https://vimawesome.com
 Plug 'elmcast/elm-vim'
@@ -40,10 +46,12 @@ nmap <Backspace> :noh<CR>
 
 " https://stackoverflow.com/questions/9511253/how-to-effectively-use-vim-wildmenu#comment58670078_9528037
 " http://www.reddit.com/r/vim/comments/19izuz/whats_your_wildmode/
-set wildmenu
+" Wildmenu
+set wildmenu " Show list instead of just completing
 "set wildmode=longest,list
 "set wildmode=longest:list,full
-set wildmode=longest:full,full
+"set wildmode=longest:full,full
+set wildmode=list:longest,full " Command <Tab> completion, list matches, then longest common part, then all
 
 set noswapfile
 set nu
@@ -59,13 +67,23 @@ set title
 set mouse=a
 
 " http://vim.wikia.com/wiki/Alternative_tab_navigation
-nnoremap <C-1> 1gt
-nnoremap <C-2> 2gt
-nnoremap <C-3> 3gt
-nnoremap <C-4> 4gt
-nnoremap <C-5> 5gt
-nnoremap <C-6> 6gt
-nnoremap <C-7> 7gt
-nnoremap <C-8> 8gt
-nnoremap <C-9> 9gt
-nnoremap <C-0> 10gt
+nmap <C-1> 1gt
+nmap <C-2> 2gt
+nmap <C-3> 3gt
+nmap <C-4> 4gt
+nmap <C-5> 5gt
+nmap <C-6> 6gt
+nmap <C-7> 7gt
+nmap <C-8> 8gt
+nmap <C-9> 9gt
+nmap <C-0> 10gt
+imap <C-1> <Esc> 1gt
+imap <C-2> <Esc> 2gt
+imap <C-3> <Esc> 3gt
+imap <C-4> <Esc> 4gt
+imap <C-5> <Esc> 5gt
+imap <C-6> <Esc> 6gt
+imap <C-7> <Esc> 7gt
+imap <C-8> <Esc> 8gt
+imap <C-9> <Esc> 9gt
+imap <C-0> <Esc> 10g
