@@ -99,8 +99,8 @@ set sessionoptions-=options
 set sessionoptions-=empty
 
 " https://www.reddit.com/r/neovim/comments/9lkz9v/nvimqtexe_what_you_do_to_automatically_restore/e77hafy/
-command! Session if filereadable(stdpath('config').'/session.vim') | silent exe 'source '.stdpath('config').'/session.vim'
-      \ | else | silent exe 'Obsession '.stdpath('config').'/session.vim' | endif
+command! Session if filereadable(stdpath('config').'/session.vim') | exe 'source '.stdpath('config').'/session.vim'
+      \ | else | exe 'Obsession '.stdpath('config').'/session.vim' | endif
 
 " Problme with elm format from elm-vim
 " https://github.com/ElmCast/elm-vim/issues/80#issuecomment-427222915
@@ -118,4 +118,4 @@ let g:fruzzy#usenative = 1
 call denite#custom#source('_', 'matchers', ['matcher/fruzzy'])
 
 " Autocommands http://learnvimscriptthehardway.stevelosh.com/chapters/12.html
-autocmd VimEnter * :Session
+autocmd VimEnter * silent! :Session
