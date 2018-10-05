@@ -118,4 +118,5 @@ let g:fruzzy#usenative = 1
 call denite#custom#source('_', 'matchers', ['matcher/fruzzy'])
 
 " Autocommands http://learnvimscriptthehardway.stevelosh.com/chapters/12.html
-autocmd VimEnter * silent! :Session
+" https://stackoverflow.com/questions/9281438/syntax-highlighting-doesnt-work-after-restore-a-previous-vim-session
+autocmd VimEnter * nested silent! :Session
