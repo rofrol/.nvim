@@ -8,6 +8,12 @@ call plug#begin('~/AppData/Local/nvim/autoload')
 " Plugins directory https://vimawesome.com
 Plug 'elmcast/elm-vim'
 Plug 'airblade/vim-rooter'
+Plug 'Shougo/denite.nvim'
+Plug 'raghur/fruzzy', {'do': { -> fruzzy#install()}}
+
+" https://github.com/justinmk/config/blob/9b5e06bf5a85865dcbf793178342cfc4201cb752/.config/nvim/init.vim#L123
+Plug 'tpope/vim-obsession'
+let g:obsession_no_bufenter = 1  " https://github.com/tpope/vim-obsession/issues/40
 call plug#end()
 
 " https://github.com/kristijanhusak/neovim-config/blob/52e9e886dd256c5c267c70d2afa72796f3390a92/init.vim#L48 
@@ -92,9 +98,26 @@ imap <C-0> <Esc> 10g
 set sessionoptions-=options
 set sessionoptions-=empty
 
+" https://www.reddit.com/r/neovim/comments/9lkz9v/nvimqtexe_what_you_do_to_automatically_restore/e77hafy/
+command! Session if filereadable(stdpath('config').'/session.vim') | silent exe 'source '.stdpath('config').'/session.vim'
+      \ | else | silent exe 'Obsession '.stdpath('config').'/session.vim' | endif
+
 " Problme with elm format from elm-vim
 " https://github.com/ElmCast/elm-vim/issues/80#issuecomment-427222915
 let g:elm_format_autosave = 0
 " https://stackoverflow.com/questions/51272435/vim-autocommand-on-write-pass-full-file-path
 " https://vi.stackexchange.com/questions/3060/suppress-output-from-a-vim-autocomand
 autocmd BufWritePost *.elm silent! !elm-format --yes %:p
+
+
+" https://www.reddit.com/r/neovim/comments/9jc0yl/fruzzy_a_freaky_fast_fuzzy_finder_for_neovim/
+" optional - but recommended - see below
+let g:fruzzy#usenative = 1
+
+" tell denite to use this matcher by default for all sources
+call denite#custom#source('_', 'matchers', ['matcher/fruzzy'])
+
+" Neovim is taking too long to respond
+"autocmd VimEnter * Session
+
+nmap <Leader>s :Session<CR>
