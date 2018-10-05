@@ -117,7 +117,4 @@ let g:fruzzy#usenative = 1
 " tell denite to use this matcher by default for all sources
 call denite#custom#source('_', 'matchers', ['matcher/fruzzy'])
 
-" Neovim is taking too long to respond
-"autocmd VimEnter * Session
-
-nmap <Leader>s :Session<CR>
+autocmd VimEnter * :Session
