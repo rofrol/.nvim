@@ -7,15 +7,27 @@ endif
 call plug#begin('~/AppData/Local/nvim/autoload')
 " Plugins directory https://vimawesome.com
 Plug 'elmcast/elm-vim'
-" disabling bc of this
-" https://www.reddit.com/r/neovim/comments/9lkz9v/nvimqtexe_what_you_do_to_automatically_restore/
-"Plug 'airblade/vim-rooter'
+Plug 'airblade/vim-rooter'
 Plug 'Shougo/denite.nvim'
 Plug 'raghur/fruzzy', {'do': { -> fruzzy#install()}}
 
 " https://github.com/justinmk/config/blob/9b5e06bf5a85865dcbf793178342cfc4201cb752/.config/nvim/init.vim#L123
 Plug 'tpope/vim-obsession'
 let g:obsession_no_bufenter = 1  " https://github.com/tpope/vim-obsession/issues/40
+
+Plug 'dbakker/vim-projectroot'
+
+function! <SID>AutoProjectRootCD()
+  try
+    if &ft != 'help'
+      ProjectRootCD
+    endif
+  catch
+    " Silently ignore invalid buffers
+  endtry
+endfunction
+
+autocmd BufEnter * call <SID>AutoProjectRootCD()
 call plug#end()
 
 " https://github.com/kristijanhusak/neovim-config/blob/52e9e886dd256c5c267c70d2afa72796f3390a92/init.vim#L48 
@@ -97,8 +109,12 @@ imap <C-9> <Esc> 9gt
 imap <C-0> <Esc> 10g
 
 " Preparation for manual session saving
-set sessionoptions-=options
-set sessionoptions-=empty
+"set sessionoptions-=options
+"set sessionoptions-=empty
+" disabling other options as tabs are not opened correctly vim vim-rooter, file paths saved
+" as relative, probably bc of session option curdir
+" https://www.reddit.com/r/neovim/comments/9lkz9v/nvimqtexe_what_you_do_to_automatically_restore/
+set sessionoptions=tabpages	
 
 " https://www.reddit.com/r/neovim/comments/9lkz9v/nvimqtexe_what_you_do_to_automatically_restore/e77hafy/
 command! Session if filereadable(stdpath('config').'/session.vim') | exe 'source '.stdpath('config').'/session.vim'
@@ -127,3 +143,4 @@ autocmd VimEnter * nested silent! :Session
 
 " <silent> does not work here, need to add silent in command: `silent exe` 
 "nmap <Leader>s :Session<CR>
+
