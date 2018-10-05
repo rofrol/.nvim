@@ -117,4 +117,5 @@ let g:fruzzy#usenative = 1
 " tell denite to use this matcher by default for all sources
 call denite#custom#source('_', 'matchers', ['matcher/fruzzy'])
 
+" Autocommands http://learnvimscriptthehardway.stevelosh.com/chapters/12.html
 autocmd VimEnter * :Session
