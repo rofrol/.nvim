@@ -7,7 +7,9 @@ endif
 call plug#begin('~/AppData/Local/nvim/autoload')
 " Plugins directory https://vimawesome.com
 Plug 'elmcast/elm-vim'
-Plug 'airblade/vim-rooter'
+" disabling bc of this
+" https://www.reddit.com/r/neovim/comments/9lkz9v/nvimqtexe_what_you_do_to_automatically_restore/
+"Plug 'airblade/vim-rooter'
 Plug 'Shougo/denite.nvim'
 Plug 'raghur/fruzzy', {'do': { -> fruzzy#install()}}
 
@@ -117,6 +119,11 @@ let g:fruzzy#usenative = 1
 " tell denite to use this matcher by default for all sources
 call denite#custom#source('_', 'matchers', ['matcher/fruzzy'])
 
+" autocmd bc of this https://www.reddit.com/r/neovim/comments/9lkz9v/nvimqtexe_what_you_do_to_automatically_restore/e77jc25/
 " Autocommands http://learnvimscriptthehardway.stevelosh.com/chapters/12.html
 " https://stackoverflow.com/questions/9281438/syntax-highlighting-doesnt-work-after-restore-a-previous-vim-session
 autocmd VimEnter * nested silent! :Session
+"autocmd VimEnter * silent! :Session
+
+" <silent> does not work here, need to add silent in command: `silent exe` 
+"nmap <Leader>s :Session<CR>
