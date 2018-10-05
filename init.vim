@@ -95,12 +95,12 @@ imap <C-9> <Esc> 9gt
 imap <C-0> <Esc> 10g
 
 " Preparation for manual session saving
-"set sessionoptions-=options
-"set sessionoptions-=empty
-" disabling other options as tabs are not opened correctly vim vim-rooter, file paths saved
-" as relative, probably bc of session option curdir
+set sessionoptions-=options
+set sessionoptions-=empty
+" tabs are not opened correctly vim vim-rooter, file paths saved
+" as relative, probably bc of session option sesdir
 " https://www.reddit.com/r/neovim/comments/9lkz9v/nvimqtexe_what_you_do_to_automatically_restore/
-set sessionoptions=tabpages	
+set sessionoptions-=curdir
 
 " https://www.reddit.com/r/neovim/comments/9lkz9v/nvimqtexe_what_you_do_to_automatically_restore/e77hafy/
 command! Session if filereadable(stdpath('config').'/session.vim') | exe 'source '.stdpath('config').'/session.vim'
