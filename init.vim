@@ -87,3 +87,14 @@ imap <C-7> <Esc> 7gt
 imap <C-8> <Esc> 8gt
 imap <C-9> <Esc> 9gt
 imap <C-0> <Esc> 10g
+
+" Preparation for manual session saving
+set sessionoptions-=options
+set sessionoptions-=empty
+
+" Problme with elm format from elm-vim
+" https://github.com/ElmCast/elm-vim/issues/80#issuecomment-427222915
+let g:elm_format_autosave = 0
+" https://stackoverflow.com/questions/51272435/vim-autocommand-on-write-pass-full-file-path
+" https://vi.stackexchange.com/questions/3060/suppress-output-from-a-vim-autocomand
+autocmd BufWritePost *.elm silent! !elm-format --yes %:p
