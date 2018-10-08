@@ -14,6 +14,9 @@ Plug 'raghur/fruzzy', {'do': { -> fruzzy#install()}}
 " https://github.com/justinmk/config/blob/9b5e06bf5a85865dcbf793178342cfc4201cb752/.config/nvim/init.vim#L123
 Plug 'tpope/vim-obsession'
 let g:obsession_no_bufenter = 1  " https://github.com/tpope/vim-obsession/issues/40
+
+" gc to comment lines selected
+Plug 'tpope/vim-commentary'
 call plug#end()
 
 " https://github.com/kristijanhusak/neovim-config/blob/52e9e886dd256c5c267c70d2afa72796f3390a92/init.vim#L48 
