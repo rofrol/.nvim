@@ -133,3 +133,6 @@ autocmd VimEnter * nested silent! :Session
 " <silent> does not work here, need to add silent in command: `silent exe` 
 "nmap <Leader>s :Session<CR>
 
+" ignore elm-stuff for tabfind etc.
+" https://stackoverflow.com/questions/4296201/vim-ignore-special-path-in-search
+set wildignore+=**/elm-stuff/**
