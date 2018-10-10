@@ -135,4 +135,9 @@ autocmd VimEnter * nested silent! :Session
 
 " ignore elm-stuff for tabfind etc.
 " https://stackoverflow.com/questions/4296201/vim-ignore-special-path-in-search
+" https://stackoverflow.com/questions/30171512/how-to-set-the-root-of-git-repository-to-vi-vim-find-path
+" https://vi.stackexchange.com/questions/6508/how-can-i-get-path-from-vim-rooters-function-and-run-it-with-quickruns-makeprg
+"set path=.,,**
+let &path .= FindRootDirectory() . "/**"
 set wildignore+=**/elm-stuff/**
+set wildignore+=**/node_modules/**
