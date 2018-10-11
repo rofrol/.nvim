@@ -137,7 +137,11 @@ autocmd VimEnter * nested silent! :Session
 " https://stackoverflow.com/questions/4296201/vim-ignore-special-path-in-search
 " https://stackoverflow.com/questions/30171512/how-to-set-the-root-of-git-repository-to-vi-vim-find-path
 " https://vi.stackexchange.com/questions/6508/how-can-i-get-path-from-vim-rooters-function-and-run-it-with-quickruns-makeprg
-"set path=.,,**
-let &path .= FindRootDirectory() . "/**"
 set wildignore+=**/elm-stuff/**
 set wildignore+=**/node_modules/**
+"let &path .= FindRootDirectory() . "/**"
+
+" Do not replace clipboard with replaced text
+" https://stackoverflow.com/questions/54255/in-vim-is-there-a-way-to-delete-without-putting-text-in-the-register/28726374#28726374
+" http://vim.wikia.com/wiki/Replace_a_word_with_yanked_text
+xnoremap p "_dP
