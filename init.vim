@@ -128,7 +128,6 @@ call denite#custom#source('_', 'matchers', ['matcher/fruzzy'])
 " Autocommands http://learnvimscriptthehardway.stevelosh.com/chapters/12.html
 " https://stackoverflow.com/questions/9281438/syntax-highlighting-doesnt-work-after-restore-a-previous-vim-session
 autocmd VimEnter * nested silent! :Session
-"autocmd VimEnter * silent! :Session
 
 " <silent> does not work here, need to add silent in command: `silent exe` 
 "nmap <Leader>s :Session<CR>
@@ -146,6 +145,3 @@ set wildignore+=**/node_modules/**
 " https://stackoverflow.com/questions/54255/in-vim-is-there-a-way-to-delete-without-putting-text-in-the-register/28726374#28726374
 " http://vim.wikia.com/wiki/Replace_a_word_with_yanked_text
 xnoremap p "_dP
-
-" https://www.reddit.com/r/neovim/comments/9n7sja/liga_source_code_pro_is_not_a_fixed_pitch_font/
-"let g:Guifont="Liga Source Code Pro:h13"
