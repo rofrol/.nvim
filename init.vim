@@ -139,6 +139,7 @@ autocmd VimEnter * nested silent! :Session
 " https://vi.stackexchange.com/questions/6508/how-can-i-get-path-from-vim-rooters-function-and-run-it-with-quickruns-makeprg
 set wildignore+=**/elm-stuff/**
 set wildignore+=**/node_modules/**
+" hangs neovim
 "let &path .= FindRootDirectory() . "/**"
 
 " Do not replace clipboard with replaced text
