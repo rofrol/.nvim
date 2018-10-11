@@ -146,3 +146,6 @@ set wildignore+=**/node_modules/**
 " https://stackoverflow.com/questions/54255/in-vim-is-there-a-way-to-delete-without-putting-text-in-the-register/28726374#28726374
 " http://vim.wikia.com/wiki/Replace_a_word_with_yanked_text
 xnoremap p "_dP
+
+" https://www.reddit.com/r/neovim/comments/9n7sja/liga_source_code_pro_is_not_a_fixed_pitch_font/
+"let g:Guifont="Liga Source Code Pro:h13"
