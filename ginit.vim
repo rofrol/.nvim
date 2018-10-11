@@ -4,12 +4,13 @@
 let s:fontsize = 11
 
 "GuiFont! Liga Source Code Pro:h11
-execute "GuiFont! Liga Source Code Pro:h" . s:fontsize
+"execute "GuiFont! Liga Source Code Pro:h" . s:fontsize
+execute "GuiFont! Consolas:h" . s:fontsize
 
 function! AdjustFontSize(amount)
   let s:fontsize = s:fontsize+a:amount
-  ":execute "GuiFont! Consolas:h" . s:fontsize
-  :execute "GuiFont! Liga Source Code Pro:h" . s:fontsize
+  :execute "GuiFont! Consolas:h" . s:fontsize
+  ":execute "GuiFont! Liga Source Code Pro:h" . s:fontsize
 endfunction
 
 noremap <C-ScrollWheelUp> :call AdjustFontSize(1)<CR>
