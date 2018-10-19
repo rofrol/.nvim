@@ -145,3 +145,7 @@ set wildignore+=**/node_modules/**
 " https://stackoverflow.com/questions/54255/in-vim-is-there-a-way-to-delete-without-putting-text-in-the-register/28726374#28726374
 " http://vim.wikia.com/wiki/Replace_a_word_with_yanked_text
 xnoremap p "_dP
+
+" Ctrl click links
+" https://github.com/equalsraf/neovim-qt/issues/345#issuecomment-340215127
+nmap <c-leftmouse> gx
